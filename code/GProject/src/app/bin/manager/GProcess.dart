@@ -1,6 +1,7 @@
 //===============================================
 import 'dart:io';
 import 'package:sprintf/sprintf.dart';
+import 'GConfig.dart';
 //===============================================
 class GProcess {
     //===============================================
@@ -48,11 +49,13 @@ class GProcess {
     }
     //===============================================
     void run_CHOICE(List<String> args) {
-        var lLast = "DART_CHOICE_ID";
+        var lLast = GConfig().getData("DART_CHOICE_ID");
+        if(lLast == null) {lLast = "";}
         stdout.write(sprintf("DART_CHOICE_ID (%s) ? ", [lLast]));
         var lAnswer = stdin.readLineSync();
-        stdout.write(sprintf("%s\n", [lAnswer]));
-        G_STATE = "S_TASK";
+        if(lAnswer == "") {lAnswer = lLast;}
+        if(lAnswer == "-q") {G_STATE = "S_END";}
+        else if(lAnswer == "1") {G_STATE = "S_SQLITE"; GConfig().setData("DART_CHOICE_ID", lAnswer);}
     }
     //===============================================
     void run_TASK(List<String> args) {
