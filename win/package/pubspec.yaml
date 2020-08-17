@@ -1,0 +1,4 @@
+name: gz_dart
+description: Administration
+dependencies:
+    sprintf: "^4.0.0"
