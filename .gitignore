@@ -13,3 +13,4 @@
 /**/*.js_
 /**/*.js.deps
 /**/*.js.map
+/win/bin/
