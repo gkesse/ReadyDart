@@ -34,37 +34,40 @@ class GProcess {
     }
     //===============================================
     void run_INIT(List<String> args) {
-        stdout.write(sprintf("run_INIT\n", []));
+        stdout.write(sprintf("DART_ADMIN !!!\n", []));
+        stdout.write(sprintf("\t%-2s : %s\n", ["-q", "quitter l'application"]));
+        stdout.write(sprintf("\n", []));
         G_STATE = "S_LOAD";
     }
     //===============================================
     void run_METHOD(List<String> args) {
-        stdout.write("run_METHOD\n");
+        stdout.write(sprintf("DART_ADMIN :\n", []));
+        stdout.write(sprintf("\t%-2s : %s\n", ["1", "S_SQLITE"]));
+        stdout.write(sprintf("\n", []));
         G_STATE = "S_CHOICE";
     }
     //===============================================
     void run_CHOICE(List<String> args) {
-        stdout.write("run_CHOICE\n");
+        var lLast = "DART_CHOICE_ID";
+        stdout.write(sprintf("DART_CHOICE_ID (%s) ? ", [lLast]));
+        var lAnswer = stdin.readLineSync();
+        stdout.write(sprintf("%s\n", [lAnswer]));
         G_STATE = "S_TASK";
     }
     //===============================================
     void run_TASK(List<String> args) {
-        stdout.write("run_TASK\n");
         G_STATE = "S_SAVE";
     }
     //===============================================
     void run_SAVE(List<String> args) {
-        stdout.write("run_SAVE\n");
         G_STATE = "S_QUIT";
     }
     //===============================================
     void run_LOAD(List<String> args) {
-        stdout.write("run_LOAD\n");
         G_STATE = "S_METHOD";
     }
     //===============================================
     void run_QUIT(List<String> args) {
-        stdout.write("run_QUIT\n");
         G_STATE = "S_END";
     }
     //===============================================

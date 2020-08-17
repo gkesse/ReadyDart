@@ -16,6 +16,7 @@ cmd: pub_stagehand
 compile: $(GMAIN)
 	@if not exist $(GBIN) ( mkdir $(GBIN) )
 	dart2native $(GMAIN) -o $(GTARGET)
+	@echo.
 pub_get:
 	@cd $(GPACK) && pub get
 pub_global:
