@@ -14,3 +14,9 @@
 /**/*.js.deps
 /**/*.js.map
 /win/bin/
+/code/GProject/src/app/.gitignore
+/code/GProject/src/app/CHANGELOG.md
+/code/GProject/src/app/analysis_options.yaml
+/code/GProject/src/app/README.md
+/code/GProject/src/app/test/
+/code/GProject/src/app/lib/
