@@ -3,16 +3,16 @@ import 'GInclude.dart';
 //===============================================
 class GSQLiteMgr {
     //===============================================
-    GSQLiteMgr._privateConstructor();
     static final GSQLiteMgr m_instance = GSQLiteMgr._privateConstructor();
     //===============================================
     var m_dbPath;
     var m_db;
     //===============================================
+    GSQLiteMgr._privateConstructor() {
+        m_instance.dbPathSet('C:\\Users\\Admin\\Downloads\\Programs\\ReadyBin\\win\\.CONFIG_O.dat');
+    }
+    //===============================================
     factory GSQLiteMgr() {
-        if(Platform.isWindows) {
-            m_instance.dbPathSet('C:\\Users\\Admin\\Downloads\\Programs\\ReadyBin\\win\\.config.dat');
-        }
         return m_instance;
     }
     //===============================================

@@ -6,10 +6,13 @@ import 'GManager.dart';
 //===============================================
 class GSQLite {
     //===============================================
-    GSQLite._privateConstructor();
     static final GSQLite m_instance = GSQLite._privateConstructor();
     //===============================================
     var G_STATE;
+    //===============================================
+    GSQLite._privateConstructor() {
+
+    }
     //===============================================
     factory GSQLite() {
         return m_instance;
@@ -171,8 +174,8 @@ class GSQLite {
     }
     //===============================================
     void run_LOAD(List<String> args) {
-        GConfig().loadData("DART_SQLITE_ID");
-        GConfig().loadData("DART_CONFIG_KEY");
+        //GConfig().loadData("DART_SQLITE_ID");
+        //GConfig().loadData("DART_CONFIG_KEY");
         G_STATE = "S_METHOD";
     }
     //===============================================

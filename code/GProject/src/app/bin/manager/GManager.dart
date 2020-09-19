@@ -3,8 +3,11 @@ import 'GInclude.dart';
 //===============================================
 class GManager {
     //===============================================
-    GManager._privateConstructor();
     static final GManager m_instance = GManager._privateConstructor();
+    //===============================================
+    GManager._privateConstructor() {
+
+    }
     //===============================================
     factory GManager() {
         return m_instance;

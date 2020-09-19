@@ -5,16 +5,20 @@ import 'GSQLite.dart';
 //===============================================
 class GProcess {
     //===============================================
-    GProcess._privateConstructor();
     static final GProcess m_instance = GProcess._privateConstructor();
-    //===============================================
     var G_STATE;
+    //===============================================
+    GProcess._privateConstructor() {
+        stdout.write("creation du singleton...\n");
+    }
     //===============================================
     factory GProcess() {
         return m_instance;
     }
     //===============================================
     void run(List<String> args) {
+        stdout.write("lancement de la methode execution\n");
+        return;
         G_STATE = "S_INIT";
         while(true) { 
             if(G_STATE == "S_ADMIN") {run_ADMIN(args);}
@@ -69,7 +73,7 @@ class GProcess {
     }
     //===============================================
     void run_LOAD(List<String> args) {
-        GConfig().loadData("DART_ADMIN_ID");
+        //GConfig().loadData("DART_ADMIN_ID");
         G_STATE = "S_METHOD";
     }
     //===============================================

@@ -3,10 +3,13 @@ import 'GSQLiteMgr.dart';
 //===============================================
 class GConfig {
     //===============================================
-    GConfig._privateConstructor();
     static final GConfig m_instance = GConfig._privateConstructor();
     //===============================================
     var m_dataMap = {};
+    //===============================================
+    GConfig._privateConstructor() {
+
+    }
     //===============================================
     factory GConfig() {
         return m_instance;
